@@ -57,11 +57,11 @@
           <div class="mt-3 leading-relaxed text-white/70">
             Sonraki Shopier Odemesi:
             <br />
-            <span class="text-base font-semibold text-white">{{ formatDateTR(nextWed) }} · 09:00</span>
+            <span class="text-base font-semibold text-white">{{ formatDateTR(nextWed) }} - 09:00</span>
           </div>
           <div class="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white/50">
             <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400"></span>
-            Guncel Saat · {{ nowText }}
+            Guncel Saat - {{ nowText }}
           </div>
         </div>
       </aside>
@@ -105,7 +105,7 @@
     </div>
 
     <div class="fixed bottom-0 left-0 right-0 z-30 border-t border-white/10 bg-slate-950/90 px-3 py-2 backdrop-blur-xl md:hidden">
-      <div class="grid grid-cols-5 gap-2">
+      <div class="grid grid-cols-3 gap-2">
         <button
           v-for="t in TABS"
           :key="t.key"

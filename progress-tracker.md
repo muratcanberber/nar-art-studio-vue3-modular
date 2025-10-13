@@ -1,18 +1,18 @@
-# NAR Art Studio Dashboard – Geliştirme Takibi
+# NAR Art Studio Dashboard - Gelistirme Takibi
 
-Bu dosya, son kullanıcı isteklerine yönelik yapılacak geliştirmelerin durumunu izlemek için tutulur. Güncellemeler Codex tarafından yapılır.
+Bu dosya, son kullanici isteklerine yonelik yapilacak gelistirmelerin durumunu izlemek icin tutulur. Guncellemeler Codex tarafindan yapilir.
 
 ## Genel Durum
-| Adım | Açıklama | Durum | Not |
+| Adim | Aciklama | Durum | Not |
 | --- | --- | --- | --- |
-| 1 | Kaynak veri yapılarının genişletilmesi ve Shopier entegrasyon altyapısı | [x] | Orders, Shipments, Materials güncellendi; Products store eklendi |
-| 2 | Siparişler ekranının tablo görünümüne taşınması | [x] | Tablo kolonları, geri sayım ve CSV çıktısı güncellendi |
-| 3 | Yapım Süreci (Gantt) ekranının eklenmesi | [ ] |  |
-| 4 | Stok ekranının kategori bazlı tabloya dönüştürülmesi | [ ] |  |
-| 5 | Ürünler ekranının eklenmesi ve Shopier veri akışı hazırlığı | [ ] |  |
-| 6 | Maliyet ekranının stok maliyetleri ve kâr hesaplayıcı ile zenginleştirilmesi | [ ] |  |
-| 7 | Stil iyileştirmeleri ve genel uyarlamalar | [ ] |  |
+| 1 | Kaynak veri yapilarinin genisletilmesi ve Shopier entegrasyon altyapisi | [x] | Orders, Shipments, Materials guncellendi; Products store eklendi |
+| 2 | Siparisler ekraninin tablo gorunumune tasinmasi | [x] | Tablo kolonlari, geri sayim ve CSV ciktilari guncellendi |
+| 3 | Yapim Sureci (Gantt) ekraninin eklenmesi | [x] | Haftalik/aylik Gantt grafigi ve ozet kartlari eklendi |
+| 4 | Stok ekraninin kategori bazli tabloya donusturulmesi | [x] | Kategori tablosu, formlar, stok alarmi ve CSV dis aktarim eklendi |
+| 5 | Urunler ekraninin eklenmesi ve Shopier veri akis hazirligi | [x] | Shopier senkronizasyon butonu, hata bildirimi ve CSV ciktilari hazirlandi |
+| 6 | Maliyet ekraninin stok maliyetleri ve kar hesaplayici ile zenginlestirilmesi | [x] | Siparis finans tablosu, stok maliyet listesi ve sliderli fiyat hesaplayici eklendi |
+| 7 | Stil iyilestirmeleri ve genel uyarlamalar | [x] | Tailwind yardimci siniflari ve tablo/pil sekilleri guncellendi |
 
 ## Notlar
-- Başlangıç tarihi: 2025-10-13
-- Gerektiğinde yeni alt başlıklar eklenecektir.
+- Baslangic tarihi: 2025-10-13
+- Gerektiginde yeni alt basliklar eklenecektir.

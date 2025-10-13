@@ -8,15 +8,15 @@
               <CircleDollarSign :size="24" />
             </div>
             <div>
-              <h2 class="text-lg font-semibold text-white">Shopier Ödeme Özeti</h2>
-              <p class="text-sm text-white/70">Son 7 günde kargoya çıkan siparişler</p>
+              <h2 class="text-lg font-semibold text-white">Shopier Odeme Ozeti</h2>
+              <p class="text-sm text-white/70">Son 7 gunde kargoya cikan siparisler</p>
             </div>
           </div>
 
           <div class="mt-6 space-y-4 text-sm">
             <div class="flex items-center justify-between rounded-xl border border-white/10 bg-white/10 px-4 py-3">
-              <div class="text-white/60">Yaklaşan Çarşamba</div>
-              <div class="text-base font-semibold text-white">{{ nextWedTR }} · 09:00</div>
+              <div class="text-white/60">Yaklasan Carsamba</div>
+              <div class="text-base font-semibold text-white">{{ nextWedTR }} - 09:00</div>
             </div>
             <div class="grid grid-cols-2 gap-3">
               <div class="rounded-xl border border-white/10 bg-slate-950/50 px-4 py-3">
@@ -42,8 +42,8 @@
         <div class="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl shadow-black/20">
           <div class="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <h2 class="text-lg font-semibold text-white">Kargo & Ödeme Detayları</h2>
-              <p class="text-sm text-white/50">Gönderi durumlarını ve ödeme süreçlerini takip edin.</p>
+              <h2 class="text-lg font-semibold text-white">Kargo & Odeme Detaylari</h2>
+              <p class="text-sm text-white/50">Gonderi durumlarini ve odeme sureclerini takip edin.</p>
             </div>
             <button
               @click="exportRows"
@@ -53,7 +53,7 @@
             </button>
           </div>
 
-          <div class="mt-5 space-y-3 overflow-y-auto pr-1 max-h-[calc(100vh-20rem)]">
+          <div class="mt-5 space-y-3 overflow-y-auto scroll-thin pr-1 max-h-[calc(100vh-20rem)]">
             <div
               v-for="s in shipments.items"
               :key="s.order_id"
@@ -81,7 +81,7 @@
 
               <div class="mt-3 grid gap-3 text-sm text-white/70 md:grid-cols-2">
                 <div class="rounded-lg border border-white/10 bg-white/5 px-3 py-2">
-                  <div class="text-[10px] uppercase tracking-[0.3em] text-white/30">Ödeme Durumu</div>
+                  <div class="text-[10px] uppercase tracking-[0.3em] text-white/30">Odeme Durumu</div>
                   <div class="mt-1 font-medium text-white">{{ s.payment_status }}</div>
                 </div>
                 <div class="rounded-lg border border-white/10 bg-white/5 px-3 py-2">
@@ -107,8 +107,8 @@
           </div>
 
           <div v-if="shipments.items.length === 0" class="mt-6 rounded-xl border border-dashed border-white/15 bg-white/5 p-8 text-center">
-            <div class="text-base font-semibold text-white">Gösterilecek gönderi bulunamadı.</div>
-            <p class="mt-2 text-sm text-white/50">Yeni gönderiler oluşturulduğunda burada belirecek.</p>
+            <div class="text-base font-semibold text-white">Gosterilecek gonderi bulunamadi.</div>
+            <p class="mt-2 text-sm text-white/50">Yeni gonderiler olusturuldugunda burada belirecek.</p>
           </div>
         </div>
       </div>

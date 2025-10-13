@@ -50,10 +50,10 @@ export const useProducts = defineStore('products', {
       },
       {
         id: 'PR-11002',
-        title: 'Geometrik Doku Triptiği',
+        title: 'Geometrik Doku Triptik',
         image: 'https://images.unsplash.com/photo-1526498460520-4f248527c914?auto=format&fit=crop&w=480&q=80',
         price: 2900,
-        category: 'Triptiğe Özel',
+        category: 'Triptik',
         sku: 'GEO-TRI-3x40x60',
         stock_status: 'low_stock',
         last_synced_at: null
@@ -63,9 +63,12 @@ export const useProducts = defineStore('products', {
     lastSyncError: '' as string | null
   }),
   actions: {
-    async syncFromShopier(endpoint = import.meta.env.VITE_SHOPIER_PRODUCTS_URL, token = import.meta.env.VITE_SHOPIER_TOKEN) {
+    async syncFromShopier(
+      endpoint = import.meta.env.VITE_SHOPIER_PRODUCTS_URL,
+      token = import.meta.env.VITE_SHOPIER_TOKEN
+    ) {
       if (!endpoint || !token) {
-        this.lastSyncError = 'Shopier API ayarları eksik. Lütfen .env dosyasını güncelleyin.'
+        this.lastSyncError = 'Shopier API ayarlari eksik. Lutfen .env dosyasini guncelleyin.'
         return
       }
 

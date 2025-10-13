@@ -2,7 +2,7 @@
   <div class="space-y-6">
     <header class="glass-panel flex flex-wrap items-center justify-between gap-4">
       <div>
-        <h2 class="text-lg font-semibold text-white">Sipariş Özeti</h2>
+        <h2 class="text-lg font-semibold text-white">Siparis Ozeti</h2>
         <p class="text-sm text-white/60">
           Shopier ve diğer kanallardan gelen siparişleri tek listede takip edin.
         </p>
@@ -30,7 +30,7 @@
               v-model="stageFilter"
               class="w-full appearance-none rounded-xl border border-white/15 bg-slate-950/40 px-4 py-2.5 pr-12 text-sm font-medium text-white/80 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-400/60"
             >
-              <option value="all">Tüm Aşamalar</option>
+              <option value="all">Tum Asamalar</option>
               <option v-for="(s, index) in stages" :key="s" :value="index + 1">{{ index + 1 }}. {{ s }}</option>
             </select>
             <ChevronDown class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white/40" :size="18" />
@@ -55,15 +55,15 @@
         </button>
       </div>
 
-      <div class="overflow-x-auto">
-        <table class="min-w-[960px] w-full border-separate border-spacing-y-2 text-left text-sm text-white/70">
+      <div class="overflow-x-auto scroll-thin">
+        <table class="table-shell min-w-[960px]">
           <thead class="text-xs uppercase tracking-[0.25em] text-white/40">
             <tr>
               <th class="rounded-l-xl bg-white/5 px-4 py-3">Sipariş</th>
-              <th class="bg-white/5 px-4 py-3">Ürün</th>
-              <th class="bg-white/5 px-4 py-3">Çerçeve</th>
+              <th class="bg-white/5 px-4 py-3">Urun</th>
+              <th class="bg-white/5 px-4 py-3">Cerceve</th>
               <th class="bg-white/5 px-4 py-3">Boyut</th>
-              <th class="bg-white/5 px-4 py-3">Özel Not</th>
+              <th class="bg-white/5 px-4 py-3">Ozel Not</th>
               <th class="bg-white/5 px-4 py-3">Satıcı</th>
               <th class="bg-white/5 px-4 py-3">Sipariş Tarihi</th>
               <th class="bg-white/5 px-4 py-3">Kargoya Kalan</th>
@@ -104,7 +104,7 @@
                   />
                   <div>
                     <div class="font-medium text-white">{{ order.product_name }}</div>
-                    <div class="text-xs text-white/40">Müşteri: {{ order.customer_name }}</div>
+                    <div class="text-xs text-white/40">Musteri: {{ order.customer_name }}</div>
                   </div>
                 </div>
               </td>
@@ -180,8 +180,8 @@ import { toCSV, downloadCSV } from '../composables/useCsv'
 const stages = [
   'Planlama',
   'Hazırlık',
-  'Üretim',
-  'Çerçeve Montaj',
+  'Uretim',
+  'Cerceve Montaj',
   'Paketleme',
   'Kargoya Teslim',
   'Teslim Tamamlandı'
@@ -212,11 +212,11 @@ const tableRows = computed(() => {
       let timeLeftLabel = ''
       if (overdue) {
         const overdueDays = Math.abs(Math.ceil(diffDaysRaw))
-        timeLeftLabel = `-${overdueDays} gün`
+        timeLeftLabel = `-${overdueDays} gun`
       } else if (diffDaysRaw > 15) {
-        timeLeftLabel = '15+ gün'
+        timeLeftLabel = '15+ gun'
       } else if (diffDaysRaw >= 1) {
-        timeLeftLabel = `${Math.ceil(diffDaysRaw)} gün`
+        timeLeftLabel = `${Math.ceil(diffDaysRaw)} gun`
       } else {
         const diffHours = Math.ceil(diffMs / (1000 * 60 * 60))
         timeLeftLabel = diffHours <= 0 ? 'Şimdi' : `${diffHours} saat`
@@ -244,7 +244,7 @@ function formatCurrency(value: number) {
 
 function whatsappUrl(order: { phone: string; customer_name: string; id: string; stageLabel: string }) {
   const phone = (order.phone || '').replace(/\D/g, '')
-  const text = `${order.customer_name}, ${order.id} siparişiniz ${order.stageLabel} aşamasında. Bilgi için bize yazabilirsiniz - NAR Art Studio.`
+  const text = `${order.customer_name}, ${order.id} siparisiniz ${order.stageLabel} asamasinda. Bilgi icin bize yazabilirsiniz - NAR Art Studio.`
   return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`
 }
 

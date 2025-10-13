@@ -2,9 +2,9 @@
   <div class="space-y-6">
     <section class="glass-panel flex flex-wrap items-center justify-between gap-4">
       <div>
-        <h2 class="text-lg font-semibold text-white">Yapım Süreci</h2>
+        <h2 class="text-lg font-semibold text-white">Yapim Sureci</h2>
         <p class="text-sm text-white/60">
-          Siparişlerin planlamadan kargoya teslimine kadar olan sürecini haftalık ve aylık görünümde izleyin.
+          Siparislerin planlamadan kargoya teslimine kadar olan surecini haftalik ve aylik gorunumde izleyin.
         </p>
       </div>
       <div class="flex items-center gap-2">
@@ -27,7 +27,7 @@
     <section class="glass-panel space-y-6">
       <div class="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.3em] text-white/40">
         <span>Toplam sipariş: <strong class="text-white/80">{{ timelineRows.length }}</strong></span>
-        <span>Aktif dönem: <strong class="text-white/80">{{ periodLabel }}</strong></span>
+        <span>Aktif donem: <strong class="text-white/80">{{ periodLabel }}</strong></span>
       </div>
 
       <div class="h-[420px]">
@@ -36,7 +36,7 @@
 
       <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
         <header class="flex items-center justify-between border-b border-white/10 px-5 py-4">
-          <span class="text-xs uppercase tracking-[0.3em] text-white/40">Durum Özeti</span>
+          <span class="text-xs uppercase tracking-[0.3em] text-white/40">Durum Ozeti</span>
           <div class="flex flex-wrap gap-2 text-xs">
             <span
               v-for="stage in stageLegend"
@@ -67,8 +67,8 @@
               </span>
             </div>
             <div class="mt-3 space-y-1 text-xs text-white/50">
-              <div>Ürün: <span class="text-white/80">{{ row.product_name }}</span></div>
-              <div>Planlanan başlangıç: {{ formatDate(row.start) }}</div>
+              <div>Urun: <span class="text-white/80">{{ row.product_name }}</span></div>
+              <div>Planlanan baslangic: {{ formatDate(row.start) }}</div>
               <div>Hedef kargo: {{ formatDate(row.end) }}</div>
             </div>
           </div>
@@ -109,15 +109,7 @@ const stageColors: Record<number, string> = {
   7: '#22d3ee'
 }
 
-const stageLabels = [
-  'Planlama',
-  'Hazırlık',
-  'Üretim',
-  'Çerçeve Montaj',
-  'Paketleme',
-  'Kargoya Teslim',
-  'Teslim'
-]
+const stageLabels = ['Planlama', 'Hazirlik', 'Uretim', 'Cerceve Montaj', 'Paketleme', 'Kargoya Teslim', 'Teslim']
 
 const dayMs = 24 * 60 * 60 * 1000
 
@@ -216,9 +208,9 @@ const chartOptions = computed(() => {
         return `
           <div class="text-xs">
             <div><strong>${params.data.product}</strong></div>
-            <div>Başlangıç: ${formatter.format(start)}</div>
-            <div>Bitiş: ${formatter.format(end)}</div>
-            <div>Aşama: ${params.data.stage}</div>
+            <div>Baslangic: ${formatter.format(start)}</div>
+            <div>Bitis: ${formatter.format(end)}</div>
+            <div>Asama: ${params.data.stage}</div>
           </div>
         `
       }

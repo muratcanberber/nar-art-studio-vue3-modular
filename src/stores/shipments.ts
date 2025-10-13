@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export type ShipmentStatus = 'Hazırlanıyor' | 'Yolda' | 'Teslim Edildi' | 'Teslimatta'
+export type ShipmentStatus = 'Hazirlaniyor' | 'Yolda' | 'Teslim Edildi' | 'Teslimatta'
 
 export type Shipment = {
   order_id: string
@@ -8,7 +8,7 @@ export type Shipment = {
   status: ShipmentStatus
   shipped_at: Date | null
   delivered_at: Date | null
-  payment_status: 'Bekliyor' | 'Ödendi'
+  payment_status: 'Bekliyor' | 'Odendi'
   platform_fee: number
 }
 
@@ -30,13 +30,13 @@ export const useShipments = defineStore('shipments', {
         status: 'Teslim Edildi',
         shipped_at: new Date(Date.now() - 3 * 86400000),
         delivered_at: new Date(Date.now() - 1 * 86400000),
-        payment_status: 'Ödendi',
+        payment_status: 'Odendi',
         platform_fee: 145
       },
       {
         order_id: 'SO-10025',
         cargo_code: 'AR-456789123',
-        status: 'Hazırlanıyor',
+        status: 'Hazirlaniyor',
         shipped_at: null,
         delivered_at: null,
         payment_status: 'Bekliyor',
@@ -46,7 +46,7 @@ export const useShipments = defineStore('shipments', {
   }),
   actions: {
     upsert(shipment: Shipment) {
-      const index = this.items.findIndex(i => i.order_id === shipment.order_id)
+      const index = this.items.findIndex(item => item.order_id === shipment.order_id)
       if (index >= 0) {
         this.items.splice(index, 1, shipment)
       } else {
