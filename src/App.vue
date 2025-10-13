@@ -16,10 +16,10 @@
         <div class="space-y-3">
           <div class="text-xs uppercase tracking-[0.4em] text-white/50">NAR Art Studio</div>
           <div class="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary-200 via-white to-primary-300">
-            Yönetim Paneli
+            Yonetim Paneli
           </div>
           <p class="text-sm leading-relaxed text-white/60">
-            Sipariş akışınızı, finansı ve stok durumunu tek ekrandan izleyin.
+            Siparis akisiniz, finans ve stok durumunu tek ekrandan izleyin.
           </p>
         </div>
 
@@ -53,15 +53,15 @@
         </nav>
 
         <div class="mt-auto rounded-2xl border border-white/10 bg-white/5 p-5 text-sm shadow-inner shadow-black/20">
-          <div class="text-xs font-semibold uppercase tracking-[0.3em] text-primary-200">Hızlı Bilgi</div>
+          <div class="text-xs font-semibold uppercase tracking-[0.3em] text-primary-200">Hizli Bilgi</div>
           <div class="mt-3 leading-relaxed text-white/70">
-            Sonraki Shopier Ödemesi:
+            Sonraki Shopier Odemesi:
             <br />
             <span class="text-base font-semibold text-white">{{ formatDateTR(nextWed) }} · 09:00</span>
           </div>
           <div class="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white/50">
             <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400"></span>
-            Güncel Saat · {{ nowText }}
+            Guncel Saat · {{ nowText }}
           </div>
         </div>
       </aside>
@@ -82,7 +82,7 @@
           </div>
           <div class="ml-auto flex items-center gap-3 text-sm text-white/60">
             <div class="hidden flex-col text-right sm:flex">
-              <span class="text-xs uppercase tracking-[0.35em] text-white/40">Bugün</span>
+              <span class="text-xs uppercase tracking-[0.35em] text-white/40">Bugun</span>
               <span class="font-medium text-white">{{ todayText }}</span>
             </div>
             <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 font-medium text-white/80">
@@ -94,16 +94,18 @@
         <main class="flex-1 px-4 py-6 sm:px-6 lg:px-10">
           <div class="mx-auto w-full max-w-7xl space-y-6">
             <OrdersScreen v-if="tab==='orders'" />
+            <ProductionTimeline v-else-if="tab==='timeline'" />
             <FinanceScreen v-else-if="tab==='finance'" />
             <StockScreen v-else-if="tab==='stock'" />
-            <CostScreen v-else />
+            <CostScreen v-else-if="tab==='cost'" />
+            <ProductsScreen v-else />
           </div>
         </main>
       </div>
     </div>
 
     <div class="fixed bottom-0 left-0 right-0 z-30 border-t border-white/10 bg-slate-950/90 px-3 py-2 backdrop-blur-xl md:hidden">
-      <div class="grid grid-cols-4 gap-2">
+      <div class="grid grid-cols-5 gap-2">
         <button
           v-for="t in TABS"
           :key="t.key"
@@ -125,25 +127,29 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
-import { Package, Truck, Warehouse, BarChart3, Menu, X } from 'lucide-vue-next'
+import { Package, Truck, Warehouse, BarChart3, Menu, X, CalendarCheck2, Layers } from 'lucide-vue-next'
 import OrdersScreen from './components/OrdersScreen.vue'
+import ProductionTimeline from './components/ProductionTimeline.vue'
 import FinanceScreen from './components/FinanceScreen.vue'
 import StockScreen from './components/StockScreen.vue'
 import CostScreen from './components/CostScreen.vue'
+import ProductsScreen from './components/ProductsScreen.vue'
 import { nextWednesday, formatDateTR } from './composables/useNextWednesday'
 
 const navOpen = ref(false)
-const tab = ref<'orders'|'finance'|'stock'|'cost'>('orders')
+const tab = ref<'orders'|'timeline'|'finance'|'stock'|'cost'|'products'>('orders')
 const nextWed = ref(nextWednesday())
 
 const TABS = [
-  { key: 'orders', label: 'Siparişler', icon: Package, description: 'Sipariş akışını yönet' },
-  { key: 'finance', label: 'Kargo & Finans', icon: Truck, description: 'Ödeme ve gönderileri izle' },
+  { key: 'orders', label: 'Siparisler', icon: Package, description: 'Siparis akisini yonet' },
+  { key: 'timeline', label: 'Yapim Sureci', icon: CalendarCheck2, description: 'Gantt takvimi ile izle' },
+  { key: 'finance', label: 'Kargo & Finans', icon: Truck, description: 'Odeme ve gonderileri izle' },
   { key: 'stock', label: 'Stok', icon: Warehouse, description: 'Malzemeleri kontrol et' },
   { key: 'cost', label: 'Maliyet', icon: BarChart3, description: 'Gelir ve gider analizleri' },
+  { key: 'products', label: 'Urunler', icon: Layers, description: 'Shopier urun envanteri' }
 ] as const
 
-const currentTab = computed(() => TABS.find(t => t.key === tab.value)!)
+const currentTab = computed(() => TABS.find(t => t.key === tab.value) ?? TABS[0])
 
 const icons = { Menu, X }
 

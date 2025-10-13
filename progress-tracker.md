@@ -6,7 +6,7 @@ Bu dosya, son kullanıcı isteklerine yönelik yapılacak geliştirmelerin durum
 | Adım | Açıklama | Durum | Not |
 | --- | --- | --- | --- |
 | 1 | Kaynak veri yapılarının genişletilmesi ve Shopier entegrasyon altyapısı | [x] | Orders, Shipments, Materials güncellendi; Products store eklendi |
-| 2 | Siparişler ekranının tablo görünümüne taşınması | [ ] |  |
+| 2 | Siparişler ekranının tablo görünümüne taşınması | [x] | Tablo kolonları, geri sayım ve CSV çıktısı güncellendi |
 | 3 | Yapım Süreci (Gantt) ekranının eklenmesi | [ ] |  |
 | 4 | Stok ekranının kategori bazlı tabloya dönüştürülmesi | [ ] |  |
 | 5 | Ürünler ekranının eklenmesi ve Shopier veri akışı hazırlığı | [ ] |  |
