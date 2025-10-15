@@ -1,33 +1,43 @@
-# NAR Art Studio – Vue 3 Modular (PWA-ready, Dark, Mobile-first)
+# NAR Art Studio Yönetim Paneli
 
-Minimal yönetim paneli. Yerel geliştirme için adımlar:
+Nuxt 3 ve Nuxt UI ile oluşturulmuş sade bir finans dashboard'u. Veriler yerel SQLite veritabanında tutulur ve tüm rotalar kimlik doğrulaması olmadan erişilemez.
+
+## Başlangıç
 
 ```bash
-# 1) Bağımlılıkları kur
-npm install
+# Bağımlılıkları kur
+bun install
 
-# 2) Geliştirme sunucusu
-npm run dev
-
-# 3) Build + preview
-npm run build
-npm run preview
+# Geliştirme sunucusunu başlat
+bun run dev
 ```
 
-## İçerik
-- Vue 3 + Vite + TypeScript
-- TailwindCSS (dark mode)
-- Pinia (stores) – mock veriler
-- lucide-vue-next (ikonlar)
-- echarts + vue-echarts (grafikler)
+İlk kurulumda aşağıdaki kullanıcı otomatik olarak eklenir:
 
-## Dosya Yapısı
-- src/components/* : Ekranlar ve UI parçaları
-- src/stores/* : Pinia store'lar (orders, shipments, materials, finance)
-- src/composables/* : CSV ve tarih yardımcıları
+- Kullanıcı adı: `admin`
+- Şifre: `narstudio123`
 
-## Notlar
-- WhatsApp linkleri `wa.me` ile çalışır.
-- Shopier ödeme özeti: Çarşamba 09:00 (yaklaşan).
-- Her ekranın E-Tablo (CSV) dışa aktarma butonu vardır.
-- PWA kaydı eklemek istersen Vite PWA plugin kurulumu yapılmalı.
+Lütfen canlı ortama geçerken şifreyi güncelleyin.
+
+## Teknoloji Yığını
+- Nuxt 3 + TypeScript
+- Nuxt UI bileşenleri
+- TailwindCSS (Nuxt UI ile birlikte gelir)
+- SQLite (better-sqlite3)
+- Basit oturum yönetimi (HTTP-only cookie)
+
+## Dizim
+- `components/` : Finans ekranı
+- `composables/` : CSV ve tarih yardımcıları
+- `layouts/` : Dashboard yerleşimi
+- `server/api/` : Veriler ve kimlik doğrulama için endpoint'ler
+- `server/plugins/` : Veritabanı kurulumu ve seed veriler
+- `server/utils/` : Veritabanı & oturum yardımcıları
+
+## Script'ler
+
+```bash
+bun run dev      # Geliştirme
+bun run build    # Üretim build
+bun run preview  # Build sonrası önizleme
+```
