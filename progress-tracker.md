@@ -12,7 +12,11 @@ Bu dosya, son kullanici isteklerine yonelik yapilacak gelistirmelerin durumunu i
 | 5 | Urunler ekraninin eklenmesi ve Shopier veri akis hazirligi | [x] | Shopier senkronizasyon butonu, hata bildirimi ve CSV ciktilari hazirlandi |
 | 6 | Maliyet ekraninin stok maliyetleri ve kar hesaplayici ile zenginlestirilmesi | [x] | Siparis finans tablosu, stok maliyet listesi ve sliderli fiyat hesaplayici eklendi |
 | 7 | Stil iyilestirmeleri ve genel uyarlamalar | [x] | Tailwind yardimci siniflari ve tablo/pil sekilleri guncellendi |
+| 8 | Navigasyon ve layout'un yeniden tasarlanmasi | [x] | Sol ikon bar, ust bilgi cubugu ve animasyonlu panel gecisleri uygulandi |
+| 9 | Siparisler ekraninin kart tabanli ve DHL odakli yeniden yapilanmasi | [x] | Progres cizgisi, DHL durumlari ve teslimat tablosu eklenerek ekran sade hale getirildi |
+| 10 | Uretim takviminin 30 gunluk ozellesmis Gantt'a gecirilmesi | [~] | SVG tabanli gantt, haftalik isaretler ve drag-drop desteği saglandi; sonraki oturumda piksel/periyod ince ayari yapilacak |
 
 ## Notlar
 - Baslangic tarihi: 2025-10-13
+- Siradaki odak: Gantt gorunumunun ince ayari ve tarih duzenlemelerinin backend ile senkronize edilmesi
 - Gerektiginde yeni alt basliklar eklenecektir.

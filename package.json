@@ -17,8 +17,7 @@
     "@nuxt/ui": "^2.16.0",
     "bcryptjs": "^3.0.2",
     "better-sqlite3": "^12.4.1",
-    "nuxt": "^3.13.0",
-    "frappe-gantt": "^0.6.1"
+    "nuxt": "^3.13.0"
   },
   "devDependencies": {
     "nuxt-ui-mcp": "^1.0.1",
